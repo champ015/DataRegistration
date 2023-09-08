@@ -1,0 +1,35 @@
+{% extends 'DataRegister/index.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<form action="" method="post" autocomplete="off">
+{%csrf_token%}
+    <div class="row">
+        <div class="col-md-8">
+            {{form.Name|as_crispy_field}}
+            {{form.Mobiel_No|as_crispy_field}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            {{form.EmpCode|as_crispy_field}}
+        </div>
+        <div class="col-md-4">
+            {{form.Position|as_crispy_field}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <button type="submit" class="btn btn-success btn-block">
+                <i class="fas fa-database">
+                    submit
+                </i>
+            </button>
+        </div>
+        <div class="col-md-4">
+            <a href="{%url 'ListData'%}" class="btn btn-text">
+                <i class="fas fa-database">BackToContent</i>
+            </a>
+        </div>
+    </div>
+</form>
+{% endblock %}
